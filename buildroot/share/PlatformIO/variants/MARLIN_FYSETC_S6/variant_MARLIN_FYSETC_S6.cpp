@@ -115,6 +115,26 @@ const PinName digitalPin[] = {
   PC_4   //D86/A6
 };
 
+// Analog (Ax) pin number array
+const uint32_t analogInputPin[] = {
+  3,  //D3   //A0
+  4,  //D4   //A1
+  32, //D32  //A2
+  33, //D33  //A3
+  34, //D34  //A4
+  35, //D35  //A5
+  36, //D36  //A6
+  0,  //D0   //A7
+  1,  //D1   //A8
+  2,  //D2   //A9
+  5,  //D5   //A10
+  6,  //D6   //A11
+  7,  //D7   //A12
+  16, //D16  //A13
+  17, //D17  //A14
+  37  //D37  //A15
+};
+
 #ifdef __cplusplus
 }
 #endif
