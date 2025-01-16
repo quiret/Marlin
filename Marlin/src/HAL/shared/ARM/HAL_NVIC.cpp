@@ -51,6 +51,12 @@
   // wired into the CPU (hard fault at attempt).
   extern void (*volatile const g_pfnVectors[VECTOR_TABLE_SIZE])();
   #define _NVIC_HAS_DEFAULT_VECTOR
+#elif defined(STM32G0xx)  // Generalize for all STM32G0 series chips
+  // STM32G0 series chips based on ARM Cortex-M0+ with 16 fixed vectors and 32 external interrupts
+  #define VECTOR_TABLE_SIZE 48  // 16 fixed exceptions + 32 external interrupts
+  #define IRQ_VECTOR_ALIGNMENT (1<<8) // 256 bytes alignment for Cortex-M0+
+  extern void (*volatile const g_pfnVectors[VECTOR_TABLE_SIZE])();
+  #define _NVIC_HAS_DEFAULT_VECTOR
 #elif defined(TARGET_LPC1768)
   // See NXP UM10360 page 75ff
   #define VECTOR_TABLE_SIZE 51
